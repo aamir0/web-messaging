@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parent Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Web Messaging - Parent</title>
 </head>
 <body>
-    <h1>Parent Document (parent.html)</h1>
     <div style="display: flex;">
         <div style="flex: 1;">
+            <h1>Parent Document (parent.html)</h1>
             <h2>Send Message to Child</h2>
             <textarea id="messageInput" placeholder="Enter message to send" rows="4" cols="50"></textarea>
             <button onclick="sendMessage()">Send to child</button>
