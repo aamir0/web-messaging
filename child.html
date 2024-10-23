@@ -6,15 +6,16 @@
     <title>Child Page</title>
     <script>
         window.addEventListener("message", function(event) {
-            if (event.origin !== "http://your-parent-domain.com") {
-                return;
-            }
+            // if (event.origin !== "http://your-parent-domain.com") {
+            //     return;
+            // }
             document.getElementById("receivedMessage").value = event.data;
+            event.source.postMessage(`Message received: ${event.data}`, '*');
         });
 
         function sendMessage() {
             var message = document.getElementById("sendMessage").value;
-            parent.postMessage(message, "http://your-parent-domain.com");
+            parent.postMessage(message, "*");
         }
     </script>
 </head>
