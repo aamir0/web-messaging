@@ -10,7 +10,6 @@
             //     return;
             // }
             document.getElementById("receivedMessage").value = event.data;
-            event.source.postMessage(`Message received: ${event.data}`, '*');
         });
 
         function sendMessage() {
@@ -20,15 +19,15 @@
     </script>
 </head>
 <body>
-    <h1>Child Page</h1>
+    <h1>Child Page (child.html)</h1>
     <div>
-        <label for="receivedMessage">Received Message:</label>
-        <textarea id="receivedMessage" readonly></textarea>
+        <h2>Received Message from Parent</h2>
+        <textarea id="receivedMessage" placeholder="Received messages will appear here" rows="4" cols="50" readonly></textarea>
     </div>
     <div>
-        <label for="sendMessage">Send Message:</label>
-        <textarea id="sendMessage"></textarea>
-        <button onclick="sendMessage()">Send</button>
+        <h2>Send Message to Parent</h2>
+        <textarea id="sendMessage" placeholder="Enter message to send" rows="4" cols="50"></textarea>
+        <button onclick="sendMessage()">Send to parent</button>
     </div>
 </body>
 </html>

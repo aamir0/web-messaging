@@ -6,13 +6,20 @@
     <title>Parent Document</title>
 </head>
 <body>
-    <h1>Parent Document</h1>
-    <iframe id="childFrame" src="child.html" width="600" height="400"></iframe>
-    <br>
-    <textarea id="messageInput" placeholder="Enter message to send" rows="4" cols="50"></textarea>
-    <button onclick="sendMessage()">Send Message</button>
-    <br>
-    <textarea id="receivedMessage" placeholder="Received messages will appear here" rows="4" cols="50" readonly></textarea>
+    <h1>Parent Document (parent.html)</h1>
+    <div style="display: flex;">
+        <div style="flex: 1;">
+            <h2>Send Message to Child</h2>
+            <textarea id="messageInput" placeholder="Enter message to send" rows="4" cols="50"></textarea>
+            <button onclick="sendMessage()">Send to child</button>
+            <br>
+            <h2>Received Message from Child</h2>
+            <textarea id="receivedMessage" placeholder="Received messages will appear here" rows="4" cols="50" readonly></textarea>
+        </div>
+        <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
+            <iframe id="childFrame" src="child.html" width="600" height="400"></iframe>
+        </div>
+    </div>
 
     <script>
         const childFrame = document.getElementById('childFrame');
