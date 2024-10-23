@@ -9,7 +9,7 @@
     <h1>Parent Document</h1>
     <iframe id="childFrame" src="child.html" width="600" height="400"></iframe>
     <br>
-    <input type="text" id="messageInput" placeholder="Enter message to send">
+    <textarea id="messageInput" placeholder="Enter message to send" rows="4" cols="50"></textarea>
     <button onclick="sendMessage()">Send Message</button>
     <br>
     <textarea id="receivedMessage" placeholder="Received messages will appear here" rows="4" cols="50" readonly></textarea>
@@ -25,7 +25,7 @@
         }
 
         window.addEventListener('message', (event) => {
-            receivedMessage.value += 'Received: ' + event.data + '\n';
+            receivedMessage.value = event.data;
         });
     </script>
 </body>
