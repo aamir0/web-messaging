@@ -42,7 +42,7 @@
         }
 
         window.addEventListener('message', (event) => {
-            receivedMessage.value = JSON.stringify(event.data);
+            receivedMessage.value = JSON.stringify(event.data, null, 2);
         });
     </script>
 </body>
