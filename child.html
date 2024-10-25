@@ -10,7 +10,7 @@
             // if (event.origin !== "http://your-parent-domain.com") {
             //     return;
             // }
-            document.getElementById("receivedMessage").value = event.data;
+            document.getElementById("receivedMessage").value = JSON.stringify(event.data);
         });
 
         function sendMessage() {
